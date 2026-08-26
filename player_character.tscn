@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cx8vmp32oayut"]
+
+[ext_resource type="Script" uid="uid://bshdwo4ytbjtq" path="res://player_character.gd" id="1_02ohv"]
+[ext_resource type="Texture2D" uid="uid://bpj5yelcxyebe" path="res://icon.svg" id="2_5up26"]
+[ext_resource type="Script" uid="uid://cuvr6ewhxawd0" path="res://components/inventory.gd" id="3_4akcp"]
+[ext_resource type="Script" uid="uid://fxhnwp01aqbm" path="res://components/equipment.gd" id="4_0hvvw"]
+[ext_resource type="Script" uid="uid://t8km2ftkg8hs" path="res://components/invoker.gd" id="5_6qc1w"]
+[ext_resource type="PackedScene" uid="uid://jv1ngkyxdp7d" path="res://menus/invocation_menu.tscn" id="6_uuvki"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_nlgaf"]
+albedo_texture = ExtResource("2_5up26")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nlgaf"]
+material = SubResource("ORMMaterial3D_nlgaf")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nlgaf"]
+
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=533033702]
+script = ExtResource("1_02ohv")
+
+[node name="CharacterMesh" type="MeshInstance3D" parent="." unique_id=434834281]
+mesh = SubResource("CapsuleMesh_nlgaf")
+
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=1283623308]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.108124, 0)
+current = true
+
+[node name="InteracionRay" type="RayCast3D" parent="PlayerCamera" unique_id=1645532026]
+target_position = Vector3(0, 0, -3)
+
+[node name="InvocationHolder" type="Marker3D" parent="PlayerCamera" unique_id=1971746417]
+transform = Transform3D(0.99984556, 0.015711712, -0.007871851, -0.015754974, 0.99986094, -0.005463997, 0.007784907, 0.0055871764, 0.9999541, -5.1072462e-08, 0, -0.58420086)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1431154326]
+shape = SubResource("CapsuleShape3D_nlgaf")
+
+[node name="Inventory" type="Node" parent="." unique_id=2147214579]
+script = ExtResource("3_4akcp")
+
+[node name="Equipment" type="Node" parent="." unique_id=793302863]
+script = ExtResource("4_0hvvw")
+
+[node name="Invoker" type="Node" parent="." unique_id=284727262]
+script = ExtResource("5_6qc1w")
+
+[node name="InvocationMenu" parent="Invoker" unique_id=1021874569 instance=ExtResource("6_uuvki")]
+visible = false
+
+[node name="Health" type="Node" parent="." unique_id=1549203688]

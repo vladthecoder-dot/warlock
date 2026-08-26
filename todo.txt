@@ -1,0 +1,10 @@
+spell crafting like in noita (in one line)
+make vore, lol. eat mages to gain their powers or level up if already have them
+still can make mage parts for crafting weapons
+so player either absorb or save parts for crafts
+
+trigger is a projectile, but cooler 😎
+trigger activates projectiles on hit with some multishot (because signle
+shot from trigger will look like shit)
+
+make conjurer global class for invoking by player and by trigger

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://jv1ngkyxdp7d"]
+
+[ext_resource type="Script" uid="uid://cypifobwa5vcn" path="res://menus/invocation_menu.gd" id="1_b0n85"]
+
+[node name="InvocationMenu" type="Control" unique_id=1021874569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b0n85")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1244811151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvocationPanel" type="PanelContainer" parent="." unique_id=1738794877]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvocationBox" type="HBoxContainer" parent="." unique_id=840773789]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="IncantationsBox" type="HBoxContainer" parent="." unique_id=410065483]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InvocationsList" type="VBoxContainer" parent="." unique_id=1377585109]
+layout_mode = 1
+offset_right = 651.0
+offset_bottom = 253.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=544647480]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -149.0
+offset_bottom = 62.0
+grow_horizontal = 0
+
+[node name="SaveButton" type="Button" parent="VBoxContainer" unique_id=1056582654]
+layout_mode = 2
+text = "Save invocation"
+
+[node name="InvocationName" type="LineEdit" parent="VBoxContainer" unique_id=2098432050]
+layout_mode = 2
+placeholder_text = "Spell name"
+alignment = 1
+
+[node name="ActiveInvocationLabel" type="Label" parent="VBoxContainer" unique_id=1684188583]
+layout_mode = 2
+text = "None"
+horizontal_alignment = 1

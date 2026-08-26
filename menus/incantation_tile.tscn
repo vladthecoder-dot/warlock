@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://q5imt4e2vnic"]
+
+[ext_resource type="Texture2D" uid="uid://bpj5yelcxyebe" path="res://icon.svg" id="1_gc7ch"]
+[ext_resource type="Script" uid="uid://dmaatu0wggk3e" path="res://menus/incantation_tile.gd" id="2_tb8eo"]
+
+[node name="IncantationTile" type="TextureButton" unique_id=717252539]
+texture_normal = ExtResource("1_gc7ch")
+script = ExtResource("2_tb8eo")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=170276545]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_bottom = -14.999771
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=569761763]
+layout_mode = 2
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1

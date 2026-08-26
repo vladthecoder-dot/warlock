@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b2q61njiqvobv"]
+
+[ext_resource type="Texture2D" uid="uid://bpj5yelcxyebe" path="res://icon.svg" id="1_4qc02"]
+[ext_resource type="PackedScene" uid="uid://cx8vmp32oayut" path="res://player_character.tscn" id="2_4wuf8"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7na74"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7na74"]
+albedo_texture = ExtResource("1_4qc02")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nlgaf"]
+material = SubResource("ORMMaterial3D_7na74")
+size = Vector2(20, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lgdxs"]
+
+[sub_resource type="Sky" id="Sky_7na74"]
+sky_material = SubResource("ProceduralSkyMaterial_lgdxs")
+
+[sub_resource type="Environment" id="Environment_nlgaf"]
+background_mode = 2
+sky = SubResource("Sky_7na74")
+
+[node name="Node3D" type="Node3D" unique_id=597255809]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=820360927]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1931104012]
+shape = SubResource("WorldBoundaryShape3D_7na74")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1603518116]
+mesh = SubResource("PlaneMesh_nlgaf")
+
+[node name="PlayerCharacter" parent="." unique_id=533033702 instance=ExtResource("2_4wuf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66016, 1, 4.3533444)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=282484484]
+environment = SubResource("Environment_nlgaf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1286236491]
+transform = Transform3D(1, 0, 0, 0, 0.42418635, 0.9055749, 0, -0.9055749, 0.42418635, 0, 6.7609253, 3.6525536)
